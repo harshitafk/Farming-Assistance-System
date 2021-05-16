@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <span> &nbsp; &nbsp; </span>
+  Welcome Farmer!
+  <span class="flex-spacer"></span>
+  <span> &nbsp; &nbsp;</span>
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <strong class="mat-subheading-1 accent-color">{{message}}</strong>
+  <mat-dialog-content>
+    <p>
+      <mat-form-field>
+        
+        <input matInput placeholder="Farmer Username" type="text" [(ngModel)]="farmer.farmerusername" name="farmerusername"  #farmerusername="ngModel" required>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="farmerusername.errors?.required">Farmer Username is required</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input matInput placeholder="Farmer Password" type="password" [(ngModel)]="farmer.farmerpassword" name="farmerpassword" #farmerpassword="ngModel" required>
+        <mat-error *ngIf="farmerpassword.errors?.required">Farmer Password is required</mat-error>
+      </mat-form-field>
+    </p>
+      <mat-checkbox [(ngModel)]="farmerModel.remember" name="remember">Remember Me</mat-checkbox>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary"  type="submit" [disabled]="loginForm.form.invalid">Login</button>
+  </div>
+  </mat-dialog-actions>
+</form>

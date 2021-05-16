@@ -1,0 +1,28 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+     <div fxFlex>
+       <mat-card >
+        <mat-toolbar color="primary">
+          <mat-icon>menu</mat-icon>
+        <div >
+         <span > <h1>Sell Crops</h1> </span>
+        </div>
+      </mat-toolbar>
+      </mat-card>
+      
+      </div>
+    
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile *ngFor="let cropmenu of cropmenus" (click)="openMenuOption(cropmenu.id)" appHighlight>
+            <img width="400px" height="400px" src={{cropmenu.image}} alt={{cropmenu.name}}>
+        <mat-grid-tile-footer>
+          <h1 >{{cropmenu.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>

@@ -1,0 +1,68 @@
+
+
+<html>
+    <head>
+    <style>
+    #customers {
+      font-family:  Didot,Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 4px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: rgb(174, 224, 94);}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+    }
+    </style>
+    </head>
+    <body>
+    
+
+        <mat-card>
+            <mat-toolbar color="primary">
+              <span><img src="./assets/images/home.jpg" height="80px" width="100px"></span>
+              <span>&nbsp; &nbsp;</span>
+              Welcome to Crops Selling Home page
+              <span class="flex-spacer"></span>
+            </mat-toolbar>
+          </mat-card>
+ 
+<table class='table' id="customers">
+    <tr>
+        <th>Farmer ID</th>
+        <th>Crop Name</th>
+        <th>Crop Price</th>
+        <th>Crop Quantity</th>
+    </tr>
+    <tr *ngFor="let crop of crops">
+        <td>{{crop.id}}</td>
+         <td>{{crop.name}}</td>
+         <td>{{crop.price}}</td>
+         <td>{{crop.quantity}}</td>
+         <td><button mat-raised-button color="primary" [routerLink]="['/updatecrop']" [state]="{crops: crop}" class="btn btn-info">Update</button></td>
+         <td><button mat-raised-button color="warn" class="btn btn-danger" (click)="deleteCrop(crop.id)">Delete</button></td>
+    </tr>
+</table>
+
+
+
+<button mat-raised-button  [routerLink]="['/cropsell']" class="btn btn-primary">Sell</button>
+
+
+
+
+
+
+

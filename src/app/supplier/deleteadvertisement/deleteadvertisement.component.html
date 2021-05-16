@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  
+  font-variant-caps: all-petite-caps;
+  font-size: 100%;
+}
+
+#customers td, #customers th {
+  border: 3px solid rgb(49, 160, 45);
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #ffffff;}
+
+#customers tr:hover {background-color: #abd65a;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+  <div  fxLayout="column" fxLayoutAlign="space-around none">
+    <mat-card fxLayout="column" fxLayoutGap="20px">
+    <mat-toolbar color="primary">
+    <span><img src="./assets/images/ad.svg" height="90px" width="100px"></span>
+    <span >&nbsp; &nbsp; &nbsp; &nbsp;</span>
+    <span >Delete Advertisements</span>
+  </mat-toolbar>
+
+
+
+
+
+
+    <table class="table table-bordered table-striped" id="customers">
+      <thead>
+      <tr>
+        <th class="hidden">Crop Id</th>
+        <th>Crop Name</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ad of advertisements">
+        <td class="hidden">{{ad.id}}</td>
+        <td>{{ad.cropname}}</td>
+        <td>{{ad.quantity}}</td>
+        <td>
+        <div class="btn-group btn-group-sm">
+        
+        <button mat-raised-button color="primary" [routerLink]="['/deleteadvertisement']" (click)="deleteAdvertisement(ad.id)" >Delete</button>
+        </div></td>
+      </tr>
+      </tbody>
+    </table>
+

@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: rgb(150, 216, 111);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 30px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+    <div  fxLayout="column" fxLayoutAlign="space-around none">
+        <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-card>
+        <mat-toolbar color="primary">
+        <span><img src="./assets/images/tranico.png" height="90px" width="100px"></span>
+        <span >&nbsp; &nbsp;</span>
+        <span >Welcome to Crops Transaction Page</span>
+      </mat-toolbar>
+    </mat-card>
+
+    <mat-card>
+    <p >These are the details of all the available transactions </p>
+   </mat-card> 
+</mat-card>
+</div>
+ 
+<table class='table' id="customers">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Sold To -Farmer ID</th>
+    </tr>
+    <tr *ngFor="let crop of crops">
+        <td>{{crop.name}}</td>
+         <td>{{crop.price}}</td>
+         <td>{{crop.quantity}}</td>
+         <td>{{crop.id}}</td>
+         <td><button mat-raised-button [routerLink]="['/suppliercropmenu']">Home</button></td>
+         
+    </tr>
+</table>

@@ -1,0 +1,28 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="50px">
+
+     <div fxFlex>
+        <div>
+          <h2>Admin Menu</h2>
+          <hr>
+        </div>
+      </div>
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile *ngFor="let adminmenu of adminmenus"
+        (click)="openMenuOption(adminmenu.id)" appHighlight>
+            <img height="200px" src={{adminmenu.image}} alt={{adminmenu.name}}>
+        <mat-grid-tile-footer>
+          <h1>{{adminmenu.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end end" >
+    <button mat-raised-button  color="warn" type="submit" [routerLink]="['/home']" >Logout</button>
+  </div>
+
+  
+</div>

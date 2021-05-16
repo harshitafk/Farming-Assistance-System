@@ -1,0 +1,35 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="50px">
+
+     <div fxFlex>
+          <mat-card>
+            <div>
+              <mat-toolbar color="primary">
+            <mat-icon>menu</mat-icon>
+            <span>&nbsp; &nbsp; &nbsp;</span>
+             <span><h1>Farmer Menu</h1></span>
+             </mat-toolbar>
+          </div>
+        </mat-card>
+      </div>
+
+  <div fxFlex >
+    <mat-grid-list cols="2" rowHeight="400px">
+      <mat-grid-tile-header>
+        <h3></h3>
+        </mat-grid-tile-header >
+        <mat-grid-tile  *ngFor="let farmermenu of farmermenus" (click)="openMenuOption(farmermenu.id)" appHighlight>
+            <img height="400px" src={{farmermenu.image}} alt={{farmermenu.name}}>
+        <mat-grid-tile-footer>
+          <h1>{{farmermenu.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end end" >
+  <button mat-raised-button  color="warn" type="submit" [routerLink]="['/home']" >Logout</button>
+</div>
+
+</div>

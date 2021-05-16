@@ -1,0 +1,98 @@
+<!-- <div class="jumbotron" >
+    <h1 class="display-4">Welcome to Complaint Homepage</h1>
+    <p class="lead">These are the details Complaints made by Farmers </p>
+    <hr class="my-4">
+    <p>We hope you are in good health</p>
+    
+  </div>
+ 
+<table class='table' >
+    <tr>
+        <th>ID</th>
+        <th>Farmer Id</th>
+        <th>Complaint Message</th>
+        <th>Complaint Status</th>
+    </tr>
+    <tr *ngFor="let comp of complaints">
+        <td>{{comp.id}}</td>
+         <td>{{comp.farmerId}}</td>
+         <td>{{comp.message}}</td>
+         <td>{{comp.status}}</td>
+         <td><a routerLink="update" [state]="{complaints: comp}" class="btn btn-info">Update</a></td>
+         <td><button class="btn btn-danger" (click)="deleteCrop(crop.id)">Delete</button></td>
+    </tr>
+</table>
+
+<input type="number"  class="form-control" [(ngModel)]="complaint.id"> -->
+<!-- Complaint Status
+<input type="text"  class="form-control" [(ngModel)]="complaint.status"> -->
+
+<!-- <br>
+<button (click)="updateComplaint()" class="btn btn-info">Save</button> -->
+
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid rgb(9, 116, 71);
+  padding: 15px;
+}
+
+#customers tr:nth-child(even){background-color: #ffffff;}
+
+#customers tr:hover {background-color: rgb(175, 214, 33);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: rgb(255, 255, 255);
+}
+</style>
+</head>
+<body>
+
+
+  <div  fxLayout="column" fxLayoutAlign="space-around none">
+    <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-toolbar color="primary">
+    <span><img src="./assets/images/compl.png" height="90px" width="90px"></span>
+    <span >&nbsp; &nbsp;</span>
+    <span >View Complaints By Farmers</span>
+  </mat-toolbar>
+  </mat-card>
+
+  <table id="customers">
+    <thead>
+    <tr>
+      <th  class="hidden">Complain ID</th>
+      <th >Farmer ID</th>
+      <th >Mesaage from farmer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comp of complaints">
+      <td >{{comp.id}}</td>
+      <td>{{comp.farmerId}}</td>
+      <td>{{comp.message}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div>
+    Complaint ID: 
+<input type="number"  class="form-control" [(ngModel)]="complaint.id"> 
+Complaint Status :
+<input type="text"  class="form-control" [(ngModel)]="complaint.status">
+
+ <br>
+<button (click)="updateComplaint()" class="btn btn-info">Save</button> 
+</div> -->

@@ -1,0 +1,107 @@
+<mat-toolbar color="primary">
+  Welcome Supplier,Sign Up!
+  <span class="flex-spacer"></span>
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+
+          <strong class="alert alert-danger">{{msg}}</strong>
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Supplier Name :</mat-label>
+              <input matInput type="text" class="form-control" placeholder="Supplier Name" name="suppliername"
+                [(ngModel)]="supplier.suppliername" #suppliername="ngModel" required>
+              <mat-icon matSuffix>sentiment_satisfied_alt</mat-icon>
+              <div *ngIf="(suppliername.invalid && suppliername.touched)" class="alert alert-danger">
+                <small *ngIf="suppliername.errors.required">Full name is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Supplier Username :</mat-label>
+              <input matInput type="text" class="form-control" placeholder="Supplier Username" name="supplierusername"
+                [(ngModel)]="supplier.supplierusername" #supplierusername="ngModel" required>
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <div *ngIf="(supplierusername.invalid && supplierusername.touched)" class="alert alert-danger">
+                <small *ngIf="supplierusername.errors.required">Username name is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Password :</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password"  name="supplierpassword"
+                [(ngModel)]="supplier.supplierpassword" #supplierpassword="ngModel" minlength="6" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <div *ngIf="supplierpassword.invalid && supplierpassword.touched" class="alert alert-danger">
+                <small *ngIf="supplierpassword.errors.required">Password is required.</small>
+                <small *ngIf="supplierpassword.errors.minlength">Password must be longer than 6 characters.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <!--<div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Confirm Password :</mat-label>
+              <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" name="confirmpassword"
+                (ngModel)="farmer.farmerpassword" #farmerpassword="ngModel" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <div class="alert alert-danger">
+                <small *ngIf="confirmpassword.value != farmerpassword.value">Password do not match</small>
+                <small *ngIf="confirmpassword.errors.required">Password is required.</small>
+              </div>
+            </mat-form-field>
+          </div>-->
+
+          <div class="form-group">
+            <mat-form-field>
+              <label>Supplier Address :</label>
+              <textarea matInput rows="10" type="text" name="supplieraddress" [(ngModel)]="supplier.supplieraddress"
+                #supplieraddress="ngModel" required></textarea>
+                <div *ngIf="(supplieraddress.invalid && supplieraddress.touched)" class="alert alert-danger">
+                <small *ngIf="supplieraddress.errors.required">Supplier Address is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Phone Number :</mat-label>
+              <input matInput placeholder="Phone Number" type="tel" name="supplierphoneno" pattern="[0-9]*"
+                [(ngModel)]="supplier.supplierphoneno" #supplierphoneno="ngModel" required />
+              <mat-icon matSuffix> call</mat-icon>
+              <div *ngIf="(supplierphoneno.invalid && supplierphoneno.touched)" class="alert alert-danger">
+                <small *ngIf="supplierphoneno.errors.required">Phone number is required.</small>
+                <small *ngIf="supplierphoneno.errors.pattern">Phone number is invalid.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="example-label"></div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" type="submit" class="btn btn-primary"
+              [disabled]="registerForm.invalid">Sign Up</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 30px;
+  
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: rgb(234, 236, 86);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+  <div  fxLayout="column" fxLayoutAlign="space-around none">
+    <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-toolbar color="primary">
+    <span><img src="./assets/images/quicktips.jpg" class="myimg"></span>
+    <span >&nbsp; &nbsp;</span>
+    <span style="font-size:30px; font-family:Arial;">View Farming Tips for You</span>
+  </mat-toolbar>
+  </mat-card>
+
+
+<table id="customers">
+    <thead>
+      <tr>
+      <th>Id</th>
+      <th>Tips Message</th>
+      
+    </tr>
+    </thead>
+      <tbody>
+       <tr *ngFor="let tips of allFarmingtip">
+        <td style="font-size:20px;">{{tips.id}}</td>
+         <td style="font-size:20px;">{{tips.tipsMessage}}</td>
+      
+       </tr>
+       </tbody>
+     </table>

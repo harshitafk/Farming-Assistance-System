@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-toolbar color="primary">
+      <span>&nbsp; &nbsp;</span> Update Crops From Here
+      <span class="flex-spacer">
+
+      </span>
+    </mat-toolbar>
+  </mat-card>
+
+  <span>&nbsp; &nbsp;</span>
+
+  <div>
+    Farmer ID :
+<input matInput type="number" class="form-control" [(ngModel)]="crop.id">
+</div>
+
+<div>
+Crop Name :
+<input type="text"  class="form-control" [(ngModel)]="crop.name">
+</div>
+
+<div>
+Crop Price :
+<input type="number" class="form-control" [(ngModel)]="crop.price">
+</div>
+
+<div>
+Crop Quantity :
+<input type="number" class="form-control"[(ngModel)]="crop.quantity">
+</div>
+
+<div>
+<button mat-raised-button (click)="updateCrop()" class="btn btn-info">Save</button>
+</div>
+
+
+
+

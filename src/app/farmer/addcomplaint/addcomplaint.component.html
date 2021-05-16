@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+
+<div  class="col-sm-4">
+  <mat-card>
+    <h1>Send Complaint</h1>
+  </mat-card>
+</div>
+
+<label>&nbsp;&nbsp;&nbsp;<span></span></label>
+<label>&nbsp;&nbsp;&nbsp;<span></span></label>
+<label>&nbsp;&nbsp;&nbsp;<span></span></label>
+
+<div class="col-sm-4">
+<form class="was-validated" >
+  
+  <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+    <mat-chip  selected color="accent" style="font-size:20px;">
+     Farmer ID : 
+    </mat-chip>
+  </mat-chip-list><br>
+  <mat-form-field appearance="outline" class="full-width">
+      <input matInput  type="number" class="form-control" id="farmerID" placeholder="Farmer ID" #idRef="ngModel" name="FarmerID" [(ngModel)]="complaint.farmerId" required><br>
+      <div *ngIf="idRef.errors &&(idRef.dirty || idRef.touched)">
+        <div [hidden]="!idRef.errors.required">Farmer ID should not be empty</div>
+       </div>
+    </mat-form-field>
+      
+      
+   
+
+      <mat-chip-list class="mat-chip-list-stacked" aria-label="Color selection">
+        <mat-chip  selected color="accent" style="font-size:20px;">
+          Complaint Message :
+        </mat-chip>
+      </mat-chip-list><br>
+        <textarea cols="50" rows="12" type="text" class="form-control" id="complaintMessage" #messageRef="ngModel" placeholder="Complaint Message" name="complaintMessage" [(ngModel)]="complaint.message" required></textarea><br>
+        <div *ngIf="messageRef.errors &&(messageRef.dirty || messageRef.touched)">
+          <div [hidden]="!messageRef.errors.required">Complaint Message should not be empty</div>
+         </div>
+        
+      
+        <label>&nbsp;&nbsp;&nbsp;<span></span></label>
+        <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit"  class="btn btn-primary"(click)="addComplaint()" [disabled]="messageRef.invalid"  >Submit</button>
+        </div>
+
+
+        
+        </form> 
+  </div>
+  </div>
+</div>
+
+
+<!-- <form action="/action_page.php" class="was-validated">
+  <div class="form-group">
+    <label for="farmerId">Farmer ID</label>
+    <input type="number" class="form-control" id="farmerID" placeholder="Farmer ID" name="FarmerID" [(ngModel)]="complaint.farmerId" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+    <div class="form-group">
+      <label for="complaintMessage">Complaint Message</label>
+      <input type="text" class="form-control" id="complaintMessage" placeholder="Complaint Message" name="complaintMessage" [(ngModel)]="complaint.message" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+   
+        
+    <button type="submit" class="btn btn-primary" (click)="addComplaint()" >Submit</button>
+  </form>  -->

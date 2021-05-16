@@ -1,0 +1,29 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+     <div fxFlex>
+       <mat-card >
+        <mat-toolbar color="primary">
+          <mat-icon>menu</mat-icon>
+        <div>
+          <span> &nbsp; &nbsp; </span>
+         <span style="font-size:30px; font-family:Arial;">Menu</span>
+        </div>
+      </mat-toolbar>
+      </mat-card>
+      
+      </div>
+    
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile *ngFor="let loginmenu of loginmenus" [routerLink]="['/userdetail', loginmenu.id]" appHighlight>
+            <img height="400px" src={{loginmenu.image}} alt={{loginmenu.name}}>
+        <mat-grid-tile-footer>
+          <h1 >{{loginmenu.name | uppercase}} (Login/Register Menu)</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>

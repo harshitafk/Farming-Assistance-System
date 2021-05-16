@@ -1,0 +1,120 @@
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 3px solid #ddd;
+  padding: 30px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+
+  <div  fxLayout="column" fxLayoutAlign="space-around none">
+    <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-toolbar color="primary">
+    <span><img src="./assets/images/quicktips.jpg" class="myimg"></span>
+    <span >&nbsp; &nbsp;</span>
+    <span style="font-size:30px; font-family:Arial;">Add Farming Tips for Farmers</span>
+  </mat-toolbar>
+  </mat-card>
+
+<div fxLayout="column" fxLayoutAlign="space-between none" >
+    <div class="col-md-6">
+      <div class="tips-form">
+        <div class="row">
+        
+          <div  class="col-md-9 form-group">
+          <mat-card >
+            <textarea  rows="30" cols="150" placeholder="Tips Message" class="form-control" [(ngModel)]="farmingtipService.currentFarmingtip.tipsMessage" #tipsMessage="ngModel" [ngClass]="{'is-invalid':tipsMessage.invalid}" required ></textarea>
+            <div *ngIf="tipsMessage.invalid" class="invalid-msg">
+              <div *ngIf="tipsMessage.errors.required" style="color:red;"> <b>Tips Message is Required</b> </div>
+            </div>
+          </mat-card>
+          </div>
+        
+
+          
+        <div  fxLayout="column" fxLayoutAlign="space-between none" >
+         <mat-card  fxLayout="row">
+          <div flex>
+            <button mat-raised-button color="accent" style="
+            height: 44px;
+            width: 138px;" (click)="createAndUpdate(farmingtipService.currentFarmingtip)">
+              <b>SUBMIT</b>
+            </button>
+          </div>
+          
+          <span> &nbsp; &nbsp; </span>
+
+          <div flex>
+            <button class="mat-raised-button" (click)="clear()" style="
+            width: 145px;
+            height: 44px;">
+              <i class="fa fa-retweet"></i>
+              CANCEL
+            </button>
+          </div>
+        </mat-card>
+        </div>
+
+      </div>
+    </div>
+    </div>
+ 
+    <div class="col-md-6">
+    </div>
+    <div>
+    <table id="customers" >
+      <thead>
+        <tr>
+        <th>Id</th>
+        <th>Tips Message</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+        <tbody>
+         <tr *ngFor="let tips of allFarmingtip">
+          <td>{{tips.id}}</td>
+           <td>{{tips.tipsMessage}}</td>
+        
+           <td>
+             <a class="btn" (click)="edit(tips)">
+               <i class="fa fa-edit"></i>
+             </a>
+            </td>
+             <td>
+             <a class="btn text-danger" (click)="deleteFarmingtip(tips.id)">
+               <i class="fa fa-trash"></i>
+             </a>
+           </td>
+         </tr>
+         </tbody>
+       </table>
+      </div>
+     
+   
+ 
+        
+  

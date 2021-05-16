@@ -1,0 +1,108 @@
+<mat-toolbar color="primary">
+  Sign up as a Farmer!
+  <span class="flex-spacer"></span>
+  <span> &nbsp; &nbsp;</span>
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+
+          <strong class="mat-subheading-1 accent-color">{{message}}</strong>
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Farmer Name :</mat-label>
+              <input matInput type="text" class="form-control" placeholder="Farmer Name" name="farmername"
+                [(ngModel)]="farmer.farmername" #farmername="ngModel" required>
+              <mat-icon matSuffix>sentiment_satisfied_alt</mat-icon>
+              <div *ngIf="(farmername.invalid && farmername.touched)" class="alert alert-danger">
+                <small *ngIf="farmername.errors.required">Full name is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Farmer Username :</mat-label>
+              <input matInput type="text" class="form-control" placeholder="Farmer Username" name="farmerusername"
+                [(ngModel)]="farmer.farmerusername" #farmerusername="ngModel" required>
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <div *ngIf="(farmerusername.invalid && farmerusername.touched)" class="alert alert-danger">
+                <small *ngIf="farmerusername.errors.required">Username name is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Password :</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" class="form-control" placeholder="Password"  name="farmerpassword"
+                [(ngModel)]="farmer.farmerpassword" #farmerpassword="ngModel" minlength="6" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <div *ngIf="farmerpassword.invalid && farmerpassword.touched" class="alert alert-danger">
+                <small *ngIf="farmerpassword.errors.required">Password is required.</small>
+                <small *ngIf="farmerpassword.errors.minlength">Password must be longer than 6 characters.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <!--<div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Confirm Password :</mat-label>
+              <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" name="confirmpassword"
+                (ngModel)="farmer.farmerpassword" #farmerpassword="ngModel" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <div class="alert alert-danger">
+                <small *ngIf="confirmpassword.value != farmerpassword.value">Password do not match</small>
+                <small *ngIf="confirmpassword.errors.required">Password is required.</small>
+              </div>
+            </mat-form-field>
+          </div>-->
+
+          <div class="form-group">
+            <mat-form-field>
+              <label>Farmer Address :</label>
+              <textarea matInput rows="10" type="text" name="farmeraddress" [(ngModel)]="farmer.farmeraddress"
+                #farmeraddress="ngModel" required></textarea>
+                <div *ngIf="(farmeraddress.invalid && farmeraddress.touched)" class="alert alert-danger">
+                <small *ngIf="farmeraddress.errors.required">Farmer Address is required.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Phone Number :</mat-label>
+              <input matInput placeholder="Phone Number" type="tel" name="farmerphoneno" pattern="[0-9]*"
+                [(ngModel)]="farmer.farmerphoneno" #farmerphoneno="ngModel" required />
+              <mat-icon matSuffix> call</mat-icon>
+              <div *ngIf="(farmerphoneno.invalid && farmerphoneno.touched)" class="alert alert-danger">
+                <small *ngIf="farmerphoneno.errors.required">Phone number is required.</small>
+                <small *ngIf="farmerphoneno.errors.pattern">Phone number is invalid.</small>
+              </div>
+            </mat-form-field>
+          </div>
+
+          <div class="example-label"></div>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary" type="submit" class="btn btn-primary"
+              [disabled]="registerForm.invalid">Sign Up</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

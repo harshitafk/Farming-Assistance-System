@@ -1,0 +1,31 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+    
+
+  <div fxFlex="40">
+    <p><mat-card *ngIf="loginmenu" class="example-card">
+      <mat-card-header>
+        <mat-card-title *ngFor="let loginmenu of loginmenus">
+          <h3>{{loginmenu.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src={{loginmenu.image}} alt={{loginmenu.name}}>
+      <mat-card-actions>
+        
+        <div class="example-button-row">
+        <button mat-raised-button color mat-button (click)="goBack()">Previous</button>
+        <span class="flex-spacer"></span>
+        <button mat-raised-button color="primary" (click)="openLoginForm(loginmenu.id)">Login</button>
+        <button mat-raised-button color="primary" (click)="openSignupForm(loginmenu.id)" mat-button>Signup</button>
+      </div>
+      </mat-card-actions>
+    </mat-card></p>
+  </div>
+
+</div>

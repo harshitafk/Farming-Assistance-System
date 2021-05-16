@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+    Welcome Admin, Login
+  <span class="flex-spacer"></span>
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+
+<form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <strong class="mat-subheading-1 accent-color">{{message}}</strong>
+  <mat-dialog-content>
+    <p>
+      <mat-form-field>
+        <input matInput placeholder="Admin Username" type="text" [(ngModel)]="admin.adminusername" name="adminusername"  #adminusername="ngModel" required>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="adminusername.errors?.required">Username is required</mat-error>
+    
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input matInput placeholder="Admin Password" type="password" [(ngModel)]="admin.adminpassword" name="adminpassword" #adminpassword="ngModel" required>
+        <mat-error *ngIf="adminpassword.errors?.required">Password is required</mat-error>
+      </mat-form-field>
+    </p>
+      <mat-checkbox [(ngModel)]="adminModel.remember" name="remember">Remember Me</mat-checkbox>
+    
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <div class="example-label"></div>
+    <div class="example-button-row">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button  mat-raised-button color="primary" type="submit" [disabled]="loginForm.form.invalid">Login</button>
+  </div>
+  </mat-dialog-actions>
+</form>
+

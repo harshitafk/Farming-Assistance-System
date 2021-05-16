@@ -1,0 +1,86 @@
+{
+  "complaints": [
+    {
+      "id": 1,
+      "farmerId": 101,
+      "message": "Fertilizers are not available.",
+      "status": "True"
+    },
+    {
+      "id": 2,
+      "farmerId": 101,
+      "message": "Tractor engine is not working.",
+      "status": "True"
+    },
+    {
+      "id": 3,
+      "farmerId": 12345,
+      "message": "Water logging is broken",
+      "status": "False"
+    },
+    {
+      "id": 4,
+      "farmerId": 123,
+      "message": "Bug on signup",
+      "status": "False"
+    },
+    {
+      "id": 5,
+      "farmerId": 1234,
+      "message": "Water logging broken",
+      "status": "False"
+    },
+    {
+      "id": 6,
+      "farmerId": 12345,
+      "message": "Tractor not starting.",
+      "status": "False"
+    },
+    {
+      "id": 7,
+      "farmerId": 1234,
+      "message": "Fertilizers not available.",
+      "status": "False"
+    },
+    {
+      "id": 8,
+      "farmerId": 12345,
+      "message": "Problem in water logging",
+      "status": "False"
+    }
+  ],
+  "crops": [
+    {
+      "id": 1234,
+      "name": "Cauliflowers",
+      "price": 10000,
+      "quantity": 100
+    }
+  ],
+  "buyCrop": [
+    {
+      "id": 1,
+      "name": "Wheat",
+      "price": 500,
+      "quantity": 1000
+    },
+    {
+      "id": 123,
+      "name": "Cereal",
+      "price": 100,
+      "quantity": 6
+    },
+    {
+      "id": 1234,
+      "name": "wheat",
+      "price": 100000,
+      "quantity": 10
+    },
+    {
+      "id": 102,
+      "name": "Rice",
+      "price": 1000,
+      "quantity": 50
+    }
+  ]
+}

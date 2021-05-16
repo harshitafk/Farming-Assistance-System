@@ -1,0 +1,64 @@
+
+    <!-- <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-toolbar color="primary">
+    <span><img src="/assets/images/tranico.png" height="90px" width="100px"></span>
+    <span >&nbsp; &nbsp;</span>
+    <span>Welcome to Buy Crops Page</span>
+    </mat-toolbar>
+    </mat-card> -->
+    <div  fxLayout="column" fxLayoutAlign="space-around none">
+        <mat-card fxLayout="column" fxLayoutGap="30px">
+        <mat-toolbar color="primary">
+        <span >&nbsp; &nbsp;</span>
+        <span >Buy Crops</span>
+      </mat-toolbar>
+</mat-card>
+
+
+<div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+
+<div class="form-group">
+    <mat-form-field appearance="legacy">
+        <mat-label>Crop ID:</mat-label>
+   <input matInput type="number"  placeholder="Crop ID" class="form-control" [(ngModel)]="crop.id" required>
+   <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+</mat-form-field>
+</div>
+
+<div class="form-group">
+<mat-form-field appearance="legacy">
+    <mat-label>Crop Name :</mat-label>
+<input  matInput type="text" placeholder="Crop Name" class="form-control" [(ngModel)]="crop.name" required>
+<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+</mat-form-field>
+</div>
+
+
+<div class="form-group">
+<mat-form-field appearance="legacy">
+    <mat-label>Crop Price</mat-label>
+<input matInput type="number" class="form-control" [(ngModel)]="crop.price">
+<span matPrefix>$&nbsp;</span>
+<span matSuffix>.00</span>
+</mat-form-field>
+</div>
+
+<div class="form-group">
+<mat-form-field appearance="fill">
+<mat-label>Crop Price</mat-label>
+<input matInput type="number" class="form-control"[(ngModel)]="crop.quantity">
+<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+</mat-form-field>
+<br>
+<button mat-raised-button (click)="buyCrop()" class="btn btn-info" type="submit" [routerLink]="['/buytransaction']">Buy</button>
+
+</div>
+
+        </div>
+      </div>
+    </div>
+</div>

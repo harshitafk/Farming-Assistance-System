@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 5px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: rgb(175, 231, 101);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+    <div  fxLayout="column" fxLayoutAlign="space-around none">
+        <mat-card fxLayout="column" fxLayoutGap="30px">
+    <mat-card>
+        <mat-toolbar color="primary">
+        <span><img src="./assets/images/home.jpg" height="90px" width="100px"></span>
+        <span >&nbsp; &nbsp;</span>
+        <span >Welcome to Crops Buying Home Page</span>
+      </mat-toolbar>
+    </mat-card>
+
+    <mat-card>
+    <p >These are the details of all the available crops </p>
+   </mat-card> 
+</mat-card>
+</div>
+ 
+<table class='table' id="customers">
+    <tr>
+        <th>Farmer ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let crop of crops">
+        <td>{{crop.id}}</td>
+         <td>{{crop.name}}</td>
+         <td>{{crop.price}}</td>
+         <td>{{crop.quantity}}</td>
+         <td><button mat-raised-button [routerLink]="['/buycrop']" [state]="{crops: crop}" class="btn btn-info">Buy</button></td>
+         
+    </tr>
+</table>
+
+<button mat-raised-button routerLink="/buytransaction" >See Transaction History</button>

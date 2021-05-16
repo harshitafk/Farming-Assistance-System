@@ -1,0 +1,53 @@
+import { Routes } from '@angular/router';
+
+import { MenuComponent } from '../menu/menu.component';
+import { UserdetailComponent } from '../userdetail/userdetail.component';
+import { HomeComponent } from '../home/home.component';
+import { AboutComponent } from '../about/about.component';
+import { ContactComponent } from '../contact/contact.component';
+import { LoginComponent } from '../login/login.component';
+import { ViewadvertisementComponent } from '../farmer/viewadvertisement/viewadvertisement.component';
+import { FarmerhomeComponent } from '../farmer/farmerhome/farmerhome.component';
+import { FarmingtipsComponent } from '../farmer/farmingtips/farmingtips.component';
+import { SupplierhomeComponent } from '../supplier/supplierhome/supplierhome.component';
+import { AdminhomeComponent } from '../admin/adminhome/adminhome.component';
+import { AddadvertisementComponent } from '../supplier/addadvertisement/addadvertisement.component'
+import { DeleteadvertisementComponent } from '../supplier/deleteadvertisement/deleteadvertisement.component';
+import { ViewfarmingtipsComponent } from '../admin/viewfarmingtips/viewfarmingtips.component';
+import { CropmenuComponent } from '../farmer/farmercrop/cropmenu/cropmenu.component';
+import { CrophomeComponent } from '../farmer/farmercrop/crophome/crophome.component'
+import { CropsellComponent } from '../farmer/farmercrop/cropsell/cropsell.component';
+import { UpdatecropComponent } from '../farmer/farmercrop/updatecrop/updatecrop.component';
+import { SuppliercropmenuComponent } from '../supplier/suppliercrop/suppliercropmenu/suppliercropmenu.component';
+import { BuycropComponent } from '../supplier/suppliercrop/buycrop/buycrop.component';
+import { BuycrophomeComponent } from '../supplier/suppliercrop/buycrophome/buycrophome.component';
+import { BuytransactionComponent } from '../supplier/suppliercrop/buytransaction/buytransaction.component';
+import { AddcomplaintComponent } from '../farmer/addcomplaint/addcomplaint.component';
+import { ViewcomplaintComponent } from '../admin/viewcomplaint/viewcomplaint.component';
+
+export const routes: Routes = [
+    { path: 'home',  component: MenuComponent },
+    { path: 'contactus', component: ContactComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'aboutus', component: AboutComponent },
+    { path: 'userdetail/:id', component: UserdetailComponent },
+    { path: 'viewadvertisement', component: ViewadvertisementComponent },
+    { path: 'farmerhome', component: FarmerhomeComponent },
+    { path: 'farmertips', component: FarmingtipsComponent },
+    { path: 'supplierhome', component: SupplierhomeComponent },
+    { path: 'adminhome', component: AdminhomeComponent },
+    { path: 'addadvertisement', component: AddadvertisementComponent },
+    { path: 'deleteadvertisement', component: DeleteadvertisementComponent },
+    { path: 'viewfarmingtips', component: ViewfarmingtipsComponent },
+    { path: 'cropmenu', component: CropmenuComponent },
+    { path: 'crophome', component: CrophomeComponent },
+    { path: 'cropsell', component: CropsellComponent },
+    { path: 'updatecrop', component: UpdatecropComponent },
+    { path: 'suppliercropmenu', component: SuppliercropmenuComponent },
+    { path: 'buycrop', component: BuycropComponent },
+    { path: 'buycrophome', component: BuycrophomeComponent },
+    { path: 'buytransaction', component: BuytransactionComponent },
+    { path: 'addcomplaint', component: AddcomplaintComponent },
+    { path: 'viewcomplaint', component: ViewcomplaintComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' }
+  ];
