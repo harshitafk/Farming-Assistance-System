@@ -1,0 +1,10 @@
+com\cg\farmingassistantsystem\registration\controller\RegistrationController.class
+com\cg\farmingassistantsystem\registration\dao\FarmerDao.class
+com\cg\farmingassistantsystem\registration\Application.class
+com\cg\farmingassistantsystem\registration\dao\SupplierDao.class
+com\cg\farmingassistantsystem\registration\dto\AdminDto.class
+com\cg\farmingassistantsystem\registration\service\RegistrationServiceImpl.class
+com\cg\farmingassistantsystem\registration\dto\SupplierDto.class
+com\cg\farmingassistantsystem\registration\service\RegistrationService.class
+com\cg\farmingassistantsystem\registration\dto\FarmerDto.class
+com\cg\farmingassistantsystem\registration\dao\AdminDao.class

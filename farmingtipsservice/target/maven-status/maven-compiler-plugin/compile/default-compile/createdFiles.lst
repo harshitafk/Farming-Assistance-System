@@ -1,0 +1,10 @@
+com\cg\fas\farmingtipsservice\FarmingtipsserviceApplication.class
+com\cg\fas\farmingtipsservice\dao\FarmingTipsRepository.class
+com\cg\fas\farmingtipsservice\service\FarmingTipsService.class
+com\cg\fas\farmingtipsservice\exceptions\ErrorMessage.class
+com\cg\fas\farmingtipsservice\dto\Tips.class
+com\cg\fas\farmingtipsservice\dao\TipsEntity.class
+com\cg\fas\farmingtipsservice\exceptions\FarmingTipsNotFoundException.class
+com\cg\fas\farmingtipsservice\service\FarmingTipsServiceImpl.class
+com\cg\fas\farmingtipsservice\controller\FarmingTipsController.class
+com\cg\fas\farmingtipsservice\exceptions\ExceptionController.class
